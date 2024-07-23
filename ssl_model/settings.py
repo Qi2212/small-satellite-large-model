@@ -75,14 +75,15 @@ WSGI_APPLICATION = "ssl_model.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ssl_model',
-        'USER': 'root',
-        'PASSWORD': '8$!J4e2NJT9TX4C',
-        'HOST':'139.224.239.85',
-        'PORT': '3306',
+        'USER':'root',
+        'PASSWORD':'Xsq031124',
+        'HOST':'127.0.0.1',
+        'PORT':3306
     }
 }
 
