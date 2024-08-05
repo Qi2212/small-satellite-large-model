@@ -1,15 +1,10 @@
 import re
-
-from django.http import JsonResponse
-from django.shortcuts import render
-
 # Create your views here.
 import hashlib
 import json
 from django.http import JsonResponse
 from django.views import View
 from .models import User
-from django.contrib.sessions.models import Session
 
 class RegisterView(View):
     def post(self, request):
@@ -25,7 +20,7 @@ class RegisterView(View):
             result = {'code': 11402, 'msg': '请输入密码'}
             return JsonResponse(result)
         #检查用户账号是否可用
-        if re.match(r'^((13[0-9])|(14[0-9])|(15[0-9])|(17[0-9])|(18[0-9]))\d{8}$',account) == None:
+        if re.match(r'^((13[0-9])|(14[0-9])|(15[0-9])|(17[0-9])|(18[0-9]))\d{8}$',account) is None:
             result = {'code':11403, 'msg': '格式有误'}
             return JsonResponse(result)
 

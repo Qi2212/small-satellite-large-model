@@ -7,7 +7,9 @@ import torch
 torch.manual_seed(0)
 
 
+#新建知识数据库
 def create_db(collection_name):
+    connections.connect("default", host="47.100.166.210", port="19530", user='root', password='')
     if utility.has_collection(collection_name):
         return False
     try:
@@ -30,3 +32,4 @@ def create_db(collection_name):
     except Exception as e:
         print(f"新建知识库遇到错误:{e}")
         return False
+
