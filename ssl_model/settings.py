@@ -14,7 +14,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+import os
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -77,14 +77,16 @@ WSGI_APPLICATION = "ssl_model.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 
+#数据库连接101.132.177.19
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ssl_model',
-        'USER':'root',
-        'PASSWORD':'123456',
-        'HOST':'127.0.0.1',
-        'PORT':3306,
+        'NAME': '',
+        'USER':'',
+        'PASSWORD':'',
+        'HOST':'',
+        'PORT':'',
+
     }
 }
 
@@ -123,11 +125,14 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
-
+MEDIA_URL = '/userfile/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'userfile')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+CORS_ORIGIN_ALLOW_ALL=True
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_METHODS = (
