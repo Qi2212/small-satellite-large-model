@@ -1,0 +1,17 @@
+@forward 'element-plus/theme-chalk/src/common/var.scss' with ($colors: ('primary': ('base': #01358e,
+        ),
+    ),
+);
+
+.el-dialog , .el-message-box{
+    border-radius: 10px;
+    // width: 40vw;
+}
+
+.el-overlay{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.el-overlay-dialog{
+    background-color: rgba(0, 0, 0, 0.2);
+}
