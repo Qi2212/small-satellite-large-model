@@ -40,7 +40,7 @@ class psl_file_record(models.Model):
     id = models.AutoField(primary_key=True, verbose_name='序号')  # 序号，主键自增
     file_name = models.CharField(max_length=255, verbose_name='文档名称')  # 文档名称
     upload_time = models.DateTimeField(auto_now_add=True, verbose_name='上传时间')  # 上传时间
-    status = models.CharField(max_length=10, choices=(('success', '成功'), ('failure', '失败'), ('middle', '存储中断'), ('false', '已失效')),
+    status = models.CharField(max_length=10, choices=(('success', '成功'), ('failure', '失败'), ('middle', '存储中断'), ('false', '已失效'),('error','转换失败')),
                               default='success',
                               verbose_name='文件上传状态')  # 文件上传状态，成功/失败
     collection_name = models.CharField(max_length=255, verbose_name='集群名称')
@@ -161,7 +161,7 @@ class pub_file_record(models.Model):
     id = models.AutoField(primary_key=True, verbose_name='序号')  # 序号，主键自增
     file_name = models.CharField(max_length=255, verbose_name='文档名称')  # 文档名称
     upload_time = models.DateTimeField(auto_now_add=True, verbose_name='上传时间')  # 上传时间
-    status = models.CharField(max_length=10, choices=(('success', '成功'), ('failure', '失败'), ('middle', '存储中断'),('false', '已失效')),
+    status = models.CharField(max_length=10, choices=(('success', '成功'), ('failure', '失败'), ('middle', '存储中断'),('false', '已失效'),('error','转换失败')),
                               default='success',
                               verbose_name='文件上传状态')  # 文件上传状态，成功/失败
     collection_name = models.CharField(max_length=255, verbose_name='集群名称', default="pub_kdb")

@@ -2,11 +2,11 @@
 # 开发时间：2024-08-05  17:41
 from pymilvus import connections, FieldSchema, CollectionSchema, DataType, Collection, utility
 import torch
-
 torch.manual_seed(0)
 
 def delete_db(collection_name,partition_name):
-    connections.connect("default", host="47.100.166.210", port="19530", user='root', password='')
+    #add your info of milvus
+    connections.connect("default", host="localhost", port="19530", user='', password='')
     collection = Collection(collection_name)
     try:
         status = collection.drop_partition(partition_name)

@@ -4,6 +4,7 @@ import hashlib
 import random
 import string
 from datetime import datetime
+
 def generate_timestamp_hash():
     """
     生成当前时间的MD5哈希值
@@ -16,12 +17,9 @@ def generate_filename(username, file_extension,user_type):
     """
     生成文件名，包括前缀、时间哈希和用户名
     """
-
     timestamp_hash = generate_timestamp_hash()
-    characters = string.ascii_letters + string.digits
+    characters = string.ascii_letters + string.digits  
     # string.ascii_letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-
-    # 生成一个5位长的随机字符串
     random_string = ''.join(random.choice(characters) for _ in range(5))
     if user_type=="normal":
         filename = f'psl_{random_string}_{timestamp_hash}.{file_extension}'

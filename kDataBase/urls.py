@@ -3,6 +3,7 @@
 from django.urls import path
 
 from kDataBase import views
+
 urlpatterns = [
     #个人新建知识库
     path('psl/create_db', views.psl_create_knowledge_views),

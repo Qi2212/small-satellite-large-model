@@ -1,26 +1,19 @@
 # 创建人：QI-BRO
 # 开发时间：2024-08-04  17:20
-
 from pymilvus import connections, FieldSchema, CollectionSchema, DataType, Collection, utility
 import torch
 from datetime import datetime
-
 torch.manual_seed(0)
-
-connections.connect("default", host="47.100.166.210", port="19530", user='root', password='')
+#add your info of milvus
+connections.connect("default", host="localhost", port="19530", user='', password='')
 
 def check_collection(collection_name):
-    connections.connect("default", host="47.100.166.210", port="19530", user='root', password='')
     if utility.has_collection(collection_name):
         return False
     else:
         return True
 
-
-
-#新建知识数据库
 def my_create_collection(collection_name):
-    connections.connect("default", host="47.100.166.210", port="19530", user='root', password='')
     if not utility.has_collection(collection_name):
         try:
             fields = [
@@ -42,9 +35,7 @@ def my_create_collection(collection_name):
             print(f"新建知识库遇到错误:{e}")
 
 
-#创建知识库->创建分区
 def my_creat_partition(collection_name,account,partition_name='_default'):
-    connections.connect("default", host="47.100.166.210", port="19530", user='root', password='')
     if not utility.has_collection(collection_name):
         print(f"集合 {collection_name} 不存在")
         return False
